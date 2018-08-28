@@ -1,0 +1,9 @@
+<h1>All designs</h1>
+
+<ul>
+  <% @designs.each do |design| %>
+    <li>
+      <p><%= link_to design.name, design_path(design) %></p>
+    </li>
+  <% end %>
+</ul>

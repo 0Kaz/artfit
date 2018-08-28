@@ -1,0 +1,17 @@
+<h1><%= @design.name %></h1>
+<p>Price: 250 Dirhams</p>
+
+<div class="container">
+  <div class="form-group">
+    <div class="row">
+      <div class="col col-xs-6">
+        <%= simple_form_for [@design, @product] do |f| %>
+          <%= f.input :size, collection: ["S","M","L"] %>
+          <%= f.input :quantity, input_html: {min: 0} %>
+          <%= f.input :unit_price, :as => :hidden, :input_html => { :value => "250" } %>
+          <%= f.submit "Add to cart", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
