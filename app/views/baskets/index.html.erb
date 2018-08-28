@@ -1,0 +1,9 @@
+<h1>Your Basket</h1>
+  <% @products.each do |product| %>
+     <h2> <%= product.design.name %>  </h2>
+<ul>
+     <li> <%= product.size %>  </li>
+     <li> <%= product.quantity %> </li>
+     <li><%= product.unit_price %> </li>
+ </ul>
+<% end %>
