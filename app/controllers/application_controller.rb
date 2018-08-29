@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
         else
           @basket_url = "#"
         end
-    else
-      @basket_url = "#"
+      end
     end
-  end
 end
