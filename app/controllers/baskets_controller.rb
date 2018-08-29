@@ -11,4 +11,3 @@ class BasketsController < ApplicationController
     #@basketproducts = @basket.products
   end
 end
-
