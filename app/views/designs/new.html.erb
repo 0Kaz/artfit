@@ -8,18 +8,25 @@
 <div class="container">
   <div class="form-group">
     <div class="row">
-      <div class="col col-xs-6">
-      <%= simple_form_for(@design, html: {id: "new_design", class: ""}) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :theme, collection: ["Cusbim", "Impressionims", "Classical", "Modern"] %>
-        <div class="dz-message ">
-            <span class="text">
-            <img src="https://image.ibb.co/cw1TNS/icons8_upload_to_ftp_100.png" alt="Camera" />
-              Drop design image here or click to upload.
-            </span>
+      <div class="col col-xs-6 col-xs-offset-3 dropzone">
+        <div class="new-design">
+          <h3>Create your design</h3>
+        </div>
+        <%= simple_form_for(@design, html: {id: "new_design", class: ""}) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :story, as: :text, placehoder: "Write the story of your design" %>
+          <%= f.input :theme, collection: ["Cusbim", "Impressionims", "Classical", "Modern"] %>
+          <%= f.file_field :photo, class: "hidden",id:"photo" %>
+            <div class="dz-message">
+              <span class="text">
+                Drop design image here or click to upload
+              </span>
+            </div>
+          <div class="dz-filename"><span data-dz-name=""></span></div>
+          <div class="button">
+            <%= f.submit "Create design", class: "btn btn-danger" %>
           </div>
-        <%= f.submit "Create design", class: "btn btn danger" %>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>

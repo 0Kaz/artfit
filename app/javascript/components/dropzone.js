@@ -14,6 +14,7 @@ function initDropZone() {
         dictRemoveFile: "Remove design image",
         sendingmultiple: function(data, xhr, formData) {
             formData.append("design[name]", $("#design_name").val());
+            formData.append("design[story]", $("#design_story").val());
             formData.append("design[theme]", $("#design_theme").val());
         }
     });
