@@ -1,0 +1,50 @@
+
+.card {
+  background-color: #e2e2e2;
+  width:250px;
+  height:300px;
+
+  margin :10px;
+
+  .card-inner {
+  background-color : white ;
+  width: 250px;
+  height: 250px;
+
+}
+.card-title {
+  position:absolute;
+  top: 20px;
+  left: 30px;
+}
+
+
+}
+
+
+
+.card-price {
+  position:absolute;
+  bottom:10px;
+  left:30px;
+}
+
+.card-price {
+  a {
+    text-decoration:none;
+  }
+
+  p {
+  font-weight: bold;
+  color: black;
+
+}
+  .fas.fa-shopping-cart {
+  position: absolute;
+  left: 200px;
+  bottom: 10px;
+  font-size:30px;
+}
+}
+
+

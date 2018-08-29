@@ -1,0 +1,21 @@
+<h1>Your Basket</h1>
+<div class="container"></div>
+  <div class="row">
+    <div class= "item_name">
+		 <% @products.each do |product| %>
+			<h2> <%= product.design.name %>  </h2>
+			</div>
+			<div class= "item_des">
+				<ul>
+				  <p><strong> Size: </strong></p>
+				    <li> <%= product.size %>  </li>
+				  <p><strong> Quantity: </strong></p>
+				     <li> <%= product.quantity %> </li>
+				  <p><strong> Price: </strong></p>
+				     <li><%= product.unit_price %> </li>
+				 </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

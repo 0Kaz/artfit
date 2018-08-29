@@ -1,9 +1,25 @@
-<h1>All designs</h1>
 
-<ul>
-  <% @designs.each do |design| %>
-    <li>
-      <p><%= link_to design.name, design_path(design) %></p>
-    </li>
+<div class="wrap">
+  <div class="container justify-content-md-center">
+    <div class="row">
+
+      <h1>All designs</h1>
+
+        <% @designs.each do |design| %>
+ <div class="col offset-md-4 col-md-4 col-xs-12">
+      <div class="card">
+        <div class="card-inner">
+      <div class="card-title"><p><%= link_to design.name, design_path(design) %></p></div>
+
+      </div>
+      <div class= "card-price">
+        <p>250 DH<p>
+        <%= link_to "", design_path(design), class:'fas fa-shopping-cart'  %>
+        </div>
+   </div>
+ </div>
   <% end %>
-</ul>
+  </div>
+</div>
+</div>
+
