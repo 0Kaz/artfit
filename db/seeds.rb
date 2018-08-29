@@ -8,10 +8,29 @@
 
 require 'faker'
 
+
 Design.destroy_all
 User.destroy_all
+PHOTO = [
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543330/img15.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543326/img11.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543326/img10.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543326/img6.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543324/img5.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543322/img2_copie.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543322/img1_copie.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543328/img3.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543333/img16.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543331/img16_copie.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543329/img14.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543327/img12_copie.png",
+  "https://res.cloudinary.com/kzkjr/image/upload/v1535543328/img13_copie.png"
+]
 
-10.times do
+PHOTO.each do |photo|
   user = User.create(email: Faker::Internet.email)
-  Design.create(name: Faker::Artist.name, theme: Faker::Music.genre, user: user)
+  design = Design.new(name: Faker::Artist.name, theme: Faker::Music.genre, user: user)
+  design.remote_photo_url = photo
+  design.save
 end
+
