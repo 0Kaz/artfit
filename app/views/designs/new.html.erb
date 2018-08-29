@@ -1,0 +1,29 @@
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url('https://images.unsplash.com/photo-1499448189785-e9901667f37f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=580baa48b2370592b1db5cedb96614c7&auto=format&fit=crop&w=1051&q=80')">
+  <div class="banner-content">
+    <h1><%= @design.name %></h1>
+    <p><%= link_to "Back to Designs", designs_path %></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form-group">
+    <div class="row">
+      <div class="col col-xs-6">
+      <%= simple_form_for(@design, html: {id: "new_design", class: ""}) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :theme, collection: ["Cusbim", "Impressionims", "Classical", "Modern"] %>
+        <div class="dz-message ">
+            <span class="text">
+            <img src="https://image.ibb.co/cw1TNS/icons8_upload_to_ftp_100.png" alt="Camera" />
+              Drop design image here or click to upload.
+            </span>
+          </div>
+        <%= f.submit "Create design", class: "btn btn danger" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= javascript_pack_tag "pages/new" %>
