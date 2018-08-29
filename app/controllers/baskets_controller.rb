@@ -5,7 +5,6 @@ class BasketsController < ApplicationController
     @basketItems.each do |item|
       @product = Product.find(item.product_id)
       @products.push(@product)
-
     end
   end
 end

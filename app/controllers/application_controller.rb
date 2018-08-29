@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :basketlink
 
   private
+
    def basketlink
      if !current_user.nil?
         user_id = current_user.id
@@ -14,8 +15,6 @@ class ApplicationController < ActionController::Base
         else
           @basket_url = "#"
         end
-    else
-      @basket_url = "#"
-    end
+     end
   end
 end
