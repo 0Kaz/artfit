@@ -1,16 +1,47 @@
-<h1><%= @design.name %></h1>
-<p>Price: 250 Dirhams</p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url('https://images.unsplash.com/photo-1499448189785-e9901667f37f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=580baa48b2370592b1db5cedb96614c7&auto=format&fit=crop&w=1051&q=80')">
+  <div class="banner-content">
+    <h1><%= @design.name %></h1>
+    <p><%= link_to "Back to Designs", designs_path %></p>
+  </div>
+</div>
 
 <div class="container">
   <div class="form-group">
     <div class="row">
       <div class="col col-xs-6">
-        <%= simple_form_for [@design, @product] do |f| %>
-          <%= f.input :size, collection: ["S","M","L"] %>
-          <%= f.input :quantity, input_html: {min: 0} %>
-          <%= f.input :unit_price, :as => :hidden, :input_html => { :value => "250" } %>
-          <%= f.submit "Add to cart", class: "btn btn-primary" %>
-        <% end %>
+      <div class="shirt-card">
+        <div class="plain-shirt" style= "background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0)), url('<%= cl_image_path("sound-merch-as-colour-staple-tshirt-white_1024x1024.png", :width=>1024, :crop=>"scale")%>')">
+          <%= cl_image_tag @design.photo, {class: "design"} %>
+        </div>
+      </div>
+      </div>
+      <div class="col col-xs-6">
+        <div class="title-flex">
+          <h3><%= @design.name %></h3>
+        </div>
+        <br>
+        <h4>Story of the design </h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa</p>
+        <div class="price">
+          <h4><strong>Price: </strong>250 Dirhams</h4>
+        </div>
+        <div class="form-group">
+          <%= simple_form_for [@design, @product] do |f| %>
+            <%= f.input :size, as: :radio_buttons, collection: ["S","M","L"], inline: true, label: false %>
+            <div class="form-inline">
+              <%= f.input :quantity, input_html: {min: 0}, label: false %>
+              <%= f.input :unit_price, :as => :hidden, :input_html => { :value => "250" } %>
+            </div>
+            <%= f.submit "Add to cart", class: "btn btn-danger" %>
+          <% end %>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="category">
+          <p> <strong>Category: </strong> #<%= @design.theme %></p>
+        </div>
       </div>
     </div>
   </div>
