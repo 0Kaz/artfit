@@ -1,11 +1,12 @@
-<h1>Your Basket</h1>
 <div class="container">
-  <div class="row">
-    <div class= "item_name">
-     <% @products.each do |product| %>
-      <h2> <%= product.design.name %>  </h2>
+  <h1>Your Basket</h1>
+  <% @products.each do |product| %>
+  <div class="row" margin-left: -15px; margin-right: -15px; outline: 10px solid red;>
+      <div class="col col-xs-12 col-sm-6 col-lg-8" border: 1px solid red;>
+      <h2 align="margin-left"> <%= product.design.name %> </h2>
+      <img class= "basketpics" <%= cl_image_tag product.design.photo,:width => 0.4, :crop=>"scale" %> >
       </div>
-      <div class= "item_des">
+      <div class="col col-xs-12 col-sm-6 col-lg-8">
         <ul>
           <p><strong> Size: </strong></p>
             <li> <%= product.size %>  </li>
@@ -16,6 +17,7 @@
          </ul>
         </div>
       </div>
+      <% end %>
     </div>
-  </div>
-<% end %>
+</div>
+
