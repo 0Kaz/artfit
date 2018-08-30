@@ -5,3 +5,6 @@ loadDynamicBannerText();
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+
+import { initCarousel } from '../components/carousel';
+initCarousel();
