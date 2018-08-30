@@ -1,0 +1,30 @@
+<%= simple_form_for(design, html: {id: "new_design", class: ""}) do |f| %>
+  <div class="col col-xs-5">
+    <%= f.input :name %>
+    <%= f.input :story, as: :text, placehoder: "Write the story of your design" %>
+    <%= f.input :theme, collection: ["Artwork", "Sports", "Country", "Music", "Geek", "Babies", "Animals", "Green", "Fun"] %>
+    <%= f.file_field :photo, class: "hidden",id:"photo" %>
+
+  </div>
+
+  <div class="col col-xs-7 droparea">
+    <div class="dropzone">
+
+      <div class="dz-message">
+        <span class="text">
+          Drop design image here or click to upload
+        </span>
+      </div>
+
+      <div class="dz-filename"><span data-dz-name=""></span></div>
+    </div>
+
+    <div class="button">
+      <%= f.submit "Create design", class: "btn btn-danger" %>
+    </div>
+
+  </div>
+
+<% end %>
+
+<%= javascript_pack_tag "pages/new" %>

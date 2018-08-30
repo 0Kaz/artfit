@@ -1,0 +1,47 @@
+body {
+  background: #FAFAFA;
+}
+
+.banner-show {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  h1 {
+    margin-top: 0;
+    font-weight: bold ;
+  }
+  p a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+div.workshop {
+  background-image: linear-gradient(rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url('https://www.qplace.com/wp-content/uploads/2014/07/savvy-citrus-grey-chevron-background1.jpg');
+  background-size: cover center center repeat;
+}
+
+.container {
+  padding: 50px;
+}
+
+.droparea {
+  padding : 25px;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+
+.form-control-label {
+  color: #dc3545;
+}
+
+div.dropzone {
+  width: 70%;
+  background: white;
+}
