@@ -1,19 +1,31 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
   transition: all 0.3s ease;
   height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: #363636;
   transition: 0.5s background-color ease;
+
 }
 
 .navbar-wagon-white {
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
+  color:black;
+  p {
+    color: black !important;
+  }
+  .navbar-wagon-link {
+  color: black;
+  font-size: 25px;
+  }
+.navbar-wagon-link:hover {
+  color: #dd0a35;
+  text-decoration: none;
+ }
 }
 
 /* Logo */
@@ -21,8 +33,11 @@
   height: 50px;
   // font-family: 'Anton', sans-serif;
   font-family: 'Gloria Hallelujah', cursive;
-  color: black;
+  color: white;
   font-size: 25px;
+  p {
+    color: white;
+  }
 }
 
 /* User Avatar */
