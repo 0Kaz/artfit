@@ -33,11 +33,12 @@ body {
   background-position: center center ;
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .design {
-  position: absolute;
   height: 32%;
   top: 29%;
   left: 30%;

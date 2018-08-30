@@ -16,8 +16,8 @@ class DesignsController < ApplicationController
 
   def create
     @design = Design.new(design_params)
+    @design.user = current_user
     if @design.save
-      @design.create
       redirect_to design_path(@design)
     else
       render :new
@@ -25,11 +25,15 @@ class DesignsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    @design.update(design_params)
+    if @design.save
+      redirect_to design_path(@design)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,7 +42,7 @@ class DesignsController < ApplicationController
 
   private
   def design_params
-    params.require(:design).permit(:name, :theme, :photo)
+    params.require(:design).permit(:name, :theme, :story, :photo)
   end
 
   def set_design
