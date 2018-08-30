@@ -11,4 +11,14 @@ function initUpdateNavbarOnScroll() {
   }
 }
 
+function hideButton() {
+  const buttonSelection = document.querySelector(".search_input");
+  const inputSelection = document.querySelector(".product-search");
+
+  buttonSelection.addEventListener("click", (event) => {
+      event.preventDefault();
+      inputSelection.classList.toggle("hide");
+   });
+  }
 export { initUpdateNavbarOnScroll };
+export { hideButton };
