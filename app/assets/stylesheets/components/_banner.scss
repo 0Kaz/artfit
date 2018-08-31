@@ -3,7 +3,7 @@
   text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-image: url('https://picjumbo.com/wp-content/uploads/t-shirts-on-rack-with-room-for-text_free_stock_photos_picjumbo_DSC03786-2210x1474.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('https://picjumbo.com/wp-content/uploads/t-shirts-on-rack-with-room-for-text_free_stock_photos_picjumbo_DSC03786-2210x1474.jpg');
   background-size: cover !important;
   background-position: bottom;
   display: flex;
