@@ -3,13 +3,21 @@
 * ------------------------------------- */
 
 .alert {
+  padding-top:20px;
   margin: 0;
   text-align: center;
   color: white;
 }
-.alert-info {
-  background: $green;
-}
+
+.wrap {
+  padding-top:60px;
+  .alert-info {
+    background: $green;
+  }
+
 .alert-warning {
   background: $red;
+  }
 }
+
+
