@@ -31,10 +31,10 @@
                 <p> Size: <%= product.size %></p>
               </div>
             </td>
-            <td class="product-price text-center"><p> €<%= product.unit_price %> </p></td>
+            <td class="product-price text-center"><p> <%= product.unit_price %> MAD </p></td>
             <td class="product-quantity text-center"><p><%= product.quantity %></p>
             </td>
-            <td class="product-total text-center">€<%= product.unit_price * product.quantity %></td>
+            <td class="product-total text-center"><%= product.unit_price * product.quantity %> MAD </td>
             <td class="product-delete text-center">
               <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, design_product_path(product.design, product), method: :delete, data: {confirm: "Are you sure?"} %>
 
@@ -49,7 +49,7 @@
             <p>Total price :</p>
           </div>
           <div class="sum">
-            <p>€ <%= @sum %></p>
+            <p>€ <%= @sum %> MAD </p>
           </div>
         </div>
         <div class="payment text-right">

@@ -13,4 +13,4 @@ let initRadioButtons = () => {
 
 window.initRadioButtons = initRadioButtons;
 
-
+export {initRadioButtons}
