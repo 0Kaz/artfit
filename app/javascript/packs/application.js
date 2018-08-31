@@ -8,3 +8,4 @@ loadDynamicBannerText();
 initUpdateNavbarOnScroll();
 hideButton();
 initRadioButtons();
+

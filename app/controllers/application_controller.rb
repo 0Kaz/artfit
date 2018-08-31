@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
           @basket_url = "/orders/#{order_id}/baskets"
         else
           @basketsum = 0
-          @basket_url = "#"
+          @basket_url = "/designs"
         end
       end
     end
