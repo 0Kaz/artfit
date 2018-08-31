@@ -8,6 +8,10 @@
 
 require 'faker'
 
+puts 'Hello Seeder! :)'
+
+puts 'Purging the DB'
+
 Basket.destroy_all
 Design.destroy_all
 Order.destroy_all
@@ -27,12 +31,32 @@ PHOTO = [
   "https://res.cloudinary.com/kzkjr/image/upload/v1535543327/img12_copie.png",
   "https://res.cloudinary.com/kzkjr/image/upload/v1535543328/img13_copie.png"
 ]
+puts 'Getting some pics from Cloudinary'
 
 PHOTO.each do |photo|
-  user = User.create(email: Faker::Internet.email)
-  theme = @themes.sample
-  design = Design.new(name: Faker::Artist.name, theme: theme, user: user)
+
+  user = User.create(email: Faker::Internet.email,password: "123456")
+  design = Design.new(name: Faker::Artist.unique.name, theme: Faker::Music.unique.genre, user: user)
   design.remote_photo_url = photo
   design.save
+  puts 'so many loops'
 end
+  array = []
+ @designs = Design.all
+ @designs.each do |design|
+ array << design.theme.to_s
+ end
+ array.each do |theme|
+   3.times do
+    user= User.all.sample
+    design = Design.new(name: Faker::BossaNova.artist, theme: theme, user: user)
+    design.remote_photo_url = PHOTO.sample
+    design.save
+   end
+   puts 'ended last loop'
+ end
+
+puts 'Finshed -- need more seeds'
+
+
 

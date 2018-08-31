@@ -5,12 +5,12 @@
     <div class="row">
       <% @sum = 0 %>
 
-      <% @designs.each do |design| %>
+      <% @array.each do |theme| %>
         <% @sum = @sum + 1 %>
-        <% @designsthemes = Design.where("theme ILIKE ?", design.theme) %>
+        <% @designsthemes = Design.where(theme: theme) %>
 
         <div class="col-xs-12 col-md-6">
-          <h3><%= design.theme %></h3>
+          <h3><%= theme %></h3>
           <div class="super">
             <div class="row" style="margin: 0">
               <div class="carousel slide multi-item-carousel" id="theCarousel<%= @sum %>">
@@ -110,6 +110,6 @@
       </div> -->
   <!--   </div>
   </div> -->
-</div>
+
 
 
