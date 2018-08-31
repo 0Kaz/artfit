@@ -1,24 +1,10 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { hideButton } from '../components/navbar';
+import { initRadioButtons } from '../components/radiobuttons';
 
 loadDynamicBannerText();
-
-import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
-
-let initRadioButtons = () => {
-
-  $("#categories label").click( (label) => {
-
-      $(document.querySelectorAll("#categories label")).removeClass("btn-success");
-
-      $(label.target).addClass('btn-success');
-
-      const categoryId = "#design_theme_" + $(label.target).attr('for').split('_')[1];
-      $(categoryId).click();
-    });
-  }
-
-window.initRadioButtons = initRadioButtons;
+hideButton();
 initRadioButtons();
-
