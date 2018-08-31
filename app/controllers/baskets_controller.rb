@@ -1,6 +1,7 @@
 class BasketsController < ApplicationController
 
   def index
+    @order = Order.find(params[:order_id])
     @basketItems = Basket.where(order_id: params[:order_id])
     compute_price
     @products = []
