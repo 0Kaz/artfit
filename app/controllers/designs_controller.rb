@@ -23,7 +23,7 @@ class DesignsController < ApplicationController
     @design = Design.new(design_params)
     @design.user = current_user
     if @design.save
-      redirect_to design_path(@design)
+      render plain: {redirect: "/designs/#{@design.id}" }.to_json, content_type: 'application/json'
     else
       render :new
     end

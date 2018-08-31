@@ -8,6 +8,7 @@ function initDropZone() {
         url: $('#new_design').action,
         maxFilesize: 3,
         maxFiles: 1,
+        previewsContainer: "#droparea",
         paramName: "design[photo]",
         addRemoveLinks: true, // Don't show remove links on dropzone itself.
         autoProcessQueue: false,
@@ -21,12 +22,11 @@ function initDropZone() {
 
     myDropzone.on("success", function(file, serverResponse) {
         /* Maybe display some more file information on your page */
-        eval(serverResponse);
+        //console.log(serverResponse);
+        window.location = serverResponse.redirect;
     });
 
-    $('#new_design').submit(function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    $('#new_design_btn').click(function(e) {
         myDropzone.processQueue();
     });
 
