@@ -5,7 +5,7 @@ function loadDynamicBannerText() {
   if($('#banner-typed-text')[0] != undefined)
   {
     new Typed('#banner-typed-text', {
-      styletrings: ["Inspire. Design. Wear."],
+      strings: ["Inspire. Design. Wear."],
       typeSpeed: 80,
       loop: true
     });

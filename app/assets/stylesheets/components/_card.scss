@@ -1,38 +1,47 @@
+.wrap {
+  padding-top: 10px !important;
+}
+h1 {
+font-family: 'Gloria Hallelujah', cursive;
+text-align: center;
+padding-bottom: 20px;
+}
 
 .card {
   background-color: #e2e2e2;
   width:250px;
   height:300px;
-
-  margin :10px;
+  margin: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(136,136,136,0.9);
+  a {
+    color: rgba(0,0,0,0.8) !important;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #dd0a35 !important;
+  }
+}
 
   .card-inner {
-  background-color : white ;
-  width: 250px;
-  height: 250px;
-
+  background-color: white;
+  height: 80%;
 }
+
 .card-title {
-  position:absolute;
-  top: 16px;
-  left: 30px;
-  font-family:"Russo One";
-  color:black !important;
-  font-size: 26px;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: rgba(0,0,0,0.8) !important;
+  font-size: 20px;
   letter-spacing:2px;
 }
 
 
 .card-shirt{
   position:absolute;
-  top:40px;
-
-
+  top: 22%;
 }
-
-}
-
-
 
 .card-price {
   position:absolute;
@@ -41,21 +50,27 @@
 }
 
 .card-price {
-  a {
-    text-decoration:none;
-  }
-
   p {
+  padding-left: 12px;
+  padding-bottom: 1px;
   font-weight: bold;
-  color: black;
-
+  color: rgba(0,0,0,0.8);
+  font-family: 'Gloria Hallelujah', cursive;
+  }
 }
-  .fas.fa-shopping-cart {
+
+.fas.fa-shopping-cart {
   position: absolute;
   left: 200px;
-  bottom: 10px;
-  font-size:30px;
-  }
+  bottom: 21px;
+  font-size: 31px;
 }
+
+.card-inner:hover {
+  opacity: 0.9;
+  background-color: rgba(0,0,0,0.1);
+  // box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3);
+}
+
 
 
