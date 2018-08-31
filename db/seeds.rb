@@ -49,7 +49,7 @@ end
  array.each do |theme|
    3.times do
     user= User.all.sample
-    design = Design.new(name: Faker::BossaNova.artist, theme: theme, user: user)
+    design = Design.new(name: Faker::BossaNova.unique.artist, theme: theme, user: user)
     design.remote_photo_url = PHOTO.sample
     design.save
    end
