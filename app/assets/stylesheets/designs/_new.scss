@@ -3,7 +3,7 @@ body {
 }
 
 .banner-show {
-  height: 200px;
+  height: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,16 @@ div.workshop {
   color: #dc3545;
 }
 
-div.dropzone {
-  width: 70%;
-  background: white;
+form.dropzone {
+  background: transparent;
+  border: none;
 }
+
+.round-corner{
+  border-radius: 15px;
+}
+
+.droparea {
+
+}
+

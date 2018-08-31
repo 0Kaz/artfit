@@ -34,6 +34,7 @@ PHOTO = [
 puts 'Getting some pics from Cloudinary'
 
 PHOTO.each do |photo|
+
   user = User.create(email: Faker::Internet.email,password: "123456")
   design = Design.new(name: Faker::Artist.unique.name, theme: Faker::Music.unique.genre, user: user)
   design.remote_photo_url = photo

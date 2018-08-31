@@ -12,11 +12,14 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="global-wrapper">
-      <%= yield %>
+
+    <div id="global-wrapper">
+        <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
   </body>
+  <script>tippy('.tipped', {placement: 'bottom'})
+</script>
 </html>

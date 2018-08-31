@@ -2,7 +2,11 @@ class DesignsController < ApplicationController
   before_action :set_design, only: [:show, :edit, :update, :destroy]
 
   def index
-    @designs = Design.all
+    if params[:query].nil?
+      @designs = Design.all
+    else
+      @designs = Design.where("theme ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -19,7 +23,7 @@ class DesignsController < ApplicationController
     @design = Design.new(design_params)
     @design.user = current_user
     if @design.save
-      redirect_to design_path(@design)
+      render plain: {redirect: "/designs/#{@design.id}" }.to_json, content_type: 'application/json'
     else
       render :new
     end

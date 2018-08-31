@@ -2,9 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :basketlink
 
-  def compute_price
+  def compute_price(basketItems)
     @sum = 0
-    @basketItems.each { |basket| @sum += basket.product.unit_price * basket.product.quantity }
+    basketItems.each { |basket| @sum += basket.product.unit_price * basket.product.quantity }
     @sum
   end
 

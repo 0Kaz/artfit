@@ -1,21 +1,27 @@
-.checkout-wrapper {
-  background: white;
-}
-
-
 html {
-  height: 100vh;
+  height: 100%;
 };
 
 
 body {
-  height: 100vh;
+  height: 100%;
 }
-
 
 .navbar-wagon-brand-black {
   height: 50px;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 25px;
   font-weight: bold;
+}
+
+
+.sum {
+  color:#dc3545;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.fix-padding {
+  padding-right: 0;
 }

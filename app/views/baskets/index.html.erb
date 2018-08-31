@@ -53,8 +53,9 @@
               <p><%= @sum %> MAD</p>
             </div>
           </div>
+
           <div class="payment text-right">
-            <%= link_to "Proceed to payment", order_path(@order), method: :patch, class: "btn btn-danger" %>
+            <%= link_to "Proceed to payment", order_path(@order), method: :patch, class: "btn btn-danger", order: @order %>
           </div>
         </div>
 

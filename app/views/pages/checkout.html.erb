@@ -1,8 +1,58 @@
-<div class="checkout-wrapper">
-  <div class="container">
-    <div class="row text-center">
-      <h2>Congratulations!</h2>
-      <h4> You finally have your own<span class="navbar-wagon-brand-black">   ARTFIT </span> t-shirt</h4>
+
+<div class="container">
+  <div class="row text-center">
+    <h2>Congratulations!</h2>
+    <h4> You finally have your own<span class="navbar-wagon-brand-black">   ARTFIT </span> t-shirt</h4>
+  </div>
+
+  <div class="row text-center">
+    <h3>Your order</h3>
+  </div>
+
+  <div class="row">
+    <table class="table-fields">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Details</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.baskets.each do |basket| %>
+        <tr>
+          <td class="checkout"><%= cl_image_tag basket.product.design.photo, {class: "cart-design"} %></td>
+          <td class="checkout-details">
+            <div class="checkout-title">
+              <h4><%= basket.product.design.name %></h4>
+            </div>
+            <div class="checkout-info">
+              <p> Size: <%= basket.product.size %></p>
+            </div>
+          </td>
+          <td class="checkout-quantity text-center"><p><%= basket.product.quantity %></p>
+          </td>
+          <td class="product-total text-right"><%= basket.product.unit_price * basket.product.quantity %> MAD</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col col-xs-6">
+    </div>
+    <div class="col col-xs-6 fix-padding">
+      <div class="total-price text-right">
+        <div class="title-sum">
+          <p>Total price :</p>
+        </div>
+        <div class="sum">
+          <p><%= @sum %> MAD</p>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>

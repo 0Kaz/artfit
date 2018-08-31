@@ -13,16 +13,20 @@
       <!-- Links when logged in -->
 
       <%= render 'shared/search' %>
-      <%= link_to "", "",class: "navbar-wagon-item navbar-wagon-link fas fa-search search_input" %>
-      <%= link_to "", "/designs", class: "navbar-wagon-item navbar-wagon-link fas fa-tshirt fa-4x" %>
-      <%= link_to "",  @basket_url, class: "navbar-wagon-item navbar-wagon-link fas fa-shopping-basket fa-4x" %>
+
+      <%= link_to "", "",class: "navbar-wagon-item navbar-wagon-link fas fa-search search_input tipped", title: "Search" %>
+
+      <%= link_to "",new_design_path,class: "navbar-wagon-item navbar-wagon-link fas fa-plus-circle tipped", title:"Make your Artfit!" %>
+
+      <%= link_to "", "/designs", class: "navbar-wagon-item navbar-wagon-link fas fa-tshirt fa-4x tipped", title:"All the designs" %>
+      <%= link_to "",  @basket_url, class: "navbar-wagon-item navbar-wagon-link fas fa-cart-arrow-down fa-4x tipped", title: "Shop!" %>
         <span class="exponent"> <%= @basketsum %> </span>
 
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%=  cl_image_tag "https://res.cloudinary.com/kzkjr/image/upload/v1535715333/user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to displaying_path(current_user.id) do %>
