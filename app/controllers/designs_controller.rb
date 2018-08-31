@@ -2,7 +2,11 @@ class DesignsController < ApplicationController
   before_action :set_design, only: [:show, :edit, :update, :destroy]
 
   def index
-    @designs = Design.all
+    if params[:query].nil?
+      @designs = Design.all
+    else
+      @designs = Design.where("theme ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show

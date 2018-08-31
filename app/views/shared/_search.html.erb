@@ -1,3 +1,9 @@
 <div class="product-search hide">
-  <%= text_field :query, class: 'query_info',placeholder: 'Find the designs'%>
+  <%= form_tag designs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "searchBar",
+    placeholder: "Find a theme you like !"
+  %>
+<% end %>
 </div>
