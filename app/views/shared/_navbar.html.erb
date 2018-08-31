@@ -14,12 +14,12 @@
 
       <%= render 'shared/search' %>
 
-      <%= link_to "", "",class: "navbar-wagon-item navbar-wagon-link fas fa-search search_input" %>
+      <%= link_to "", "",class: "navbar-wagon-item navbar-wagon-link fas fa-search search_input tipped", title: "Search" %>
 
-      <%= link_to "",new_design_path,class: "navbar-wagon-item navbar-wagon-link fas fa-plus-circle" %>
+      <%= link_to "",new_design_path,class: "navbar-wagon-item navbar-wagon-link fas fa-plus-circle tipped", title:"Make your Artfit!" %>
 
-      <%= link_to "", "/designs", class: "navbar-wagon-item navbar-wagon-link fas fa-tshirt fa-4x" %>
-      <%= link_to "",  @basket_url, class: "navbar-wagon-item navbar-wagon-link fas fa-cart-arrow-down fa-4x" %>
+      <%= link_to "", "/designs", class: "navbar-wagon-item navbar-wagon-link fas fa-tshirt fa-4x tipped", title:"All the designs" %>
+      <%= link_to "",  @basket_url, class: "navbar-wagon-item navbar-wagon-link fas fa-cart-arrow-down fa-4x tipped", title: "Shop!" %>
         <span class="exponent"> <%= @basketsum %> </span>
 
 
