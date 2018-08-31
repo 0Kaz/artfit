@@ -10,6 +10,8 @@
             <div class="card-inner">
               <div class="card-title"><p><%= link_to design.name, design_path(design) %></p>
               </div>
+
+                  <div class="card-shirt"><%= cl_image_tag(design.photo,:width => 250,:crop => "pad")%></div>
             </div>
 
             <div class= "card-price">

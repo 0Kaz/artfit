@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :baskets, only: [ :index]
   end
   get "checkout", to: "pages#checkout"
+
 end

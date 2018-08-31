@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda');
 // @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah');
-
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 // Your CSS partials
 @import "layouts/index";
@@ -19,3 +19,15 @@
 @import "pages/index";
 @import "designs/index";
 @import "baskets/index";
+
+
+
+html {
+  height: 100%;
+}
+
+
+body {
+  height: 100%;
+}
+
