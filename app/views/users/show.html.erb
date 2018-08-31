@@ -2,20 +2,14 @@
 <div class="row">
   <div class="col-md-3">
     <div class="center">
-      <%= image_tag "ArtfIt.jpg", class:"avatar-full" %>
+      <%=  cl_image_tag "https://res.cloudinary.com/kzkjr/image/upload/v1535715333/user.png", :width=>300, :crop=>"scale", class: "avatar-full"%>
     </div>
-    <div class="panel panel-default">
 
-      <div class="panel-heading"> </div>
-      <div class="panel-body">
-        <br>
-        Designer or not ?
-      </div>
-    </div>
   </div>
   <div class="col-md-9">
-    <h3><%= @user.email %> </h3>
+    <h3><%= @user.username %> </h3>
     <div class="description row-space-3">
+      <h2><%= @user.description %></h2>
 
     </div>
   </div>
