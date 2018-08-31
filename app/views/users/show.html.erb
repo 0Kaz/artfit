@@ -1,14 +1,28 @@
-<div class="wrap">
+<div class="usr_wrap">
 <div class="row">
   <div class="col-md-3">
     <div class="center">
       <%=  cl_image_tag "https://res.cloudinary.com/kzkjr/image/upload/v1535715333/user.png", :width=>300, :crop=>"scale", class: "avatar-full"%>
-    </div>
-  </div>
-  <div class="col-md-9">
-      <h3><%= @user.username %></h3>
-      <h2><%= @user.description %></h2>
+    <div class="panel panel-default">
+      <div class="panel-heading">Profile</div>
+      <div class="panel-body">
+        <%= current_user.username %> <br>
+        <%= current_user.description %>
+      </div>
     </div>
   </div>
 </div>
+  <div class="col-md-9">
+
+    <h3>Art Fit profile !</h3>
+    <div class="description row-space-3">
+      Sup guys ! Don't you worry, ain't a ghost.
+      Just a foolish avatar next to that guy presenting.
+
+
+      <h3><%= @user.username %></h3>
+      <h2><%= @user.description %></h2>
+
+    </div>
+  </div>
 </div>
