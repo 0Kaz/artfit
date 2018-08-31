@@ -22,10 +22,11 @@ body {
 div.workshop {
   background-image: linear-gradient(rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url('https://www.qplace.com/wp-content/uploads/2014/07/savvy-citrus-grey-chevron-background1.jpg');
   background-size: cover center center repeat;
+  padding: 25px 0;
 }
 
 .container {
-  padding: 50px;
+  padding: 40px;
 }
 
 .droparea {
@@ -35,7 +36,6 @@ div.workshop {
 .button {
   margin-top: 20px;
 }
-
 
 .form-control-label {
   color: #dc3545;

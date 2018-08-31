@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :designs do
     resources :products, only: [ :create, :update, :destroy]
   end
-  resources :orders , only: [ :create] do
+  resources :orders , only: [ :create, :update] do
     resources :baskets, only: [ :index]
   end
+  get "checkout", to: "pages#checkout"
 end

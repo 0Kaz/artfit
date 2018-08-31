@@ -2,7 +2,14 @@
   <div class="col col-xs-5">
     <%= f.input :name %>
     <%= f.input :story, as: :text, placehoder: "Write the story of your design" %>
-    <%= f.input :theme, collection: ["Artwork", "Sports", "Country", "Music", "Geek", "Babies", "Animals", "Green", "Fun"] %>
+    <div id="categories">
+      <label for="design_theme" class="form-control-label">Theme</label>
+      <br>
+      <% @themes.each do |category| %>
+      <%= f.radio_button :theme, category, class: "hidden" %>
+      <%= f.label category, category, class: "btn" %>
+      <% end %>
+    </div>
     <%= f.file_field :photo, class: "hidden",id:"photo" %>
 
   </div>
