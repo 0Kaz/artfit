@@ -11,7 +11,7 @@
               <div class="card-title"><p><%= link_to design.name, design_path(design) %></p>
               </div>
 
-                  <div class="card-shirt" style= "background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0)), url('<%= cl_image_path("sound-merch-as-colour-staple-tshirt-white_1024x1024.png", :width=>240, :crop=>"scale")%>')"> <%= cl_image_tag(design.photo,:width => 300,:crop => "pad", class:"cropping_shirt")%></div>
+                  <div class="card-shirt"><%= cl_image_tag(design.photo,:width => 250,:crop => "pad")%></div>
             </div>
 
             <div class= "card-price">
