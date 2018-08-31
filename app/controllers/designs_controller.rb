@@ -12,6 +12,7 @@ class DesignsController < ApplicationController
 
   def new
     @design = Design.new
+    @themes = ["artwork", "sports", "country", "music", "geek", "babies", "animals", "green", "fun"]
   end
 
   def create

@@ -1,0 +1,82 @@
+.container{
+  max-height: 100%;
+  padding: 45px 0;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+td {
+  padding: 20px 0;
+}
+
+.cart-design {
+  height: 90px;
+}
+
+.table-fields {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 50px;
+}
+
+th {
+  padding: 20px 0;
+}
+
+tr {
+  border-bottom: solid 1px #dbdbdb;
+}
+
+
+.product {
+  width: 15%;
+}
+
+.product-details {
+  width: 35%;
+}
+
+.product-title {
+
+}
+.product-info {
+
+}
+
+.product-price {
+  width:15% ;
+}
+
+.product-quantity {
+  width: 15% ;
+}
+
+.product-delete {
+  width: 5%
+}
+
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+  padding: 35px 0;
+  p {
+    margin: 0;
+  }
+  .title-sum {
+    font-weight: bold;
+  }
+  .sum {
+    padding-left: 40px;
+  }
+}
+
+.empty {
+  p {
+    margin: 20%;
+    font-size: 20px;
+  }
+}
