@@ -1,25 +1,115 @@
 <div class="section2">
+  <h2>Browse T-shirts by Theme</h2>
+
+  <div class="container big-container">
+    <div class="row">
+      <% @sum = 0 %>
+
+      <% @designs.each do |design| %>
+        <% @sum = @sum + 1 %>
+        <% @designsthemes = Design.where("theme ILIKE ?", design.theme) %>
+
+        <div class="col-xs-12 col-md-6">
+          <h3><%= design.theme %></h3>
+          <div class="super">
+            <div class="row" style="margin: 0">
+              <div class="carousel slide multi-item-carousel" id="theCarousel<%= @sum %>">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="col-xs-4">
+                      <%= link_to design_path(@designsthemes.first) do %>
+                        <%= cl_image_tag @designsthemes.first.photo,class: "img-responsive img-cat" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <% @designsthemes.drop(1).each do |theme| %>
+                    <div class="item">
+                      <div class="col-xs-4">
+                        <%= link_to design_path(theme) do %>
+                          <%= cl_image_tag theme.photo,class: "img-responsive img-cat" %>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <a class="left carousel-control" href="#theCarousel<%= @sum %>" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                <a class="right carousel-control" href="#theCarousel<%= @sum %>" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
   <div class="card-container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1533227539765-2673468b083c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=704661f0c21c7855fe9cf510d5f347fc&auto=format&fit=crop&w=664&q=80');">
-          <a href="#" class="card-cat-btn">For Men</a>
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1532640331846-d2da5987c3ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2bafa1f285fecd2f71c3133ef79fba50&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Artwork</a>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-4">
-        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1525843164177-5f89f7263e3b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2da73e9cc6baf46f3f72e9c467d1480f&auto=format&fit=crop&w=800&q=80');">
-          <a href="#" class="card-cat-btn">For Women</a>
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d1b2af9b97e338e3a5d1160a8d1f0a4&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Sports</a>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-4">
-        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1519278409-1f56fdda7fe5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a7a68b27d02eb72fde274bb412ff3ed&auto=format&fit=crop&w=750&q=80');">
-          <a href="#" class="card-cat-btn">For Kids</a>
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1528280469494-bc0421abebab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d7be147f5c2ee5773ce48cc6e505b635&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Country</a>
         </div>
       </div>
-    </div>
-  </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1524650359799-842906ca1c06?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=743a655cbb8c62af3cc4af24bb315f11&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Music</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4868cc90c3c515fb1316574d9aff1640&w=1000&q=80');">
+          <a href="#" class="card-cat-btn">Geek</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=492f6735e2c55d60fe2f791f1c546280&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Babies</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1519900270450-3a6adec39956?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61c717efaa5ddb6abb69bfddf97456ce&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Animals</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1489644484856-f3ddc0adc923?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72215ecec87db2106d129d0f056ff884&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Green</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="cat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=71d59cd22de21da8d2939bc203617983&auto=format&fit=crop&w=800&q=60');">
+          <a href="#" class="card-cat-btn">Fun</a>
+        </div>
+      </div> -->
+  <!--   </div>
+  </div> -->
 </div>
 
 
