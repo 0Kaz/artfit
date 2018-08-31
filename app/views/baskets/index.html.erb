@@ -1,21 +1,62 @@
-<h1>Your Basket</h1>
 <div class="container">
-  <div class="row">
-    <div class= "item_name">
-     <% @products.each do |product| %>
-      <h2> <%= product.design.name %>  </h2>
+    <div class="row text-center">
+      <h2>Your Basket</h2>
+    </div>
+
+    <% if @basketsum == 0 %>
+      <div class="empty text-center">
+        <p>Your basket is empty</p>
       </div>
-      <div class= "item_des">
-        <ul>
-          <p><strong> Size: </strong></p>
-            <li> <%= product.size %>  </li>
-          <p><strong> Quantity: </strong></p>
-             <li> <%= product.quantity %> </li>
-          <p><strong> Price: </strong></p>
-             <li><%= product.unit_price %> </li>
-         </ul>
+
+    <% else %>
+      <table class="table-fields">
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+          <tr>
+            <td class="product"><%= cl_image_tag product.design.photo, {class: "cart-design"} %></td>
+            <td class="product-details">
+              <div class="product-title">
+                <h4><%= product.design.name %></h4>
+              </div>
+              <div class="product-info">
+                <p> Size: <%= product.size %></p>
+              </div>
+            </td>
+            <td class="product-price text-center"><p> €<%= product.unit_price %> </p></td>
+            <td class="product-quantity text-center"><p><%= product.quantity %></p>
+            </td>
+            <td class="product-total text-center">€<%= product.unit_price * product.quantity %></td>
+            <td class="product-delete text-center">
+              <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, design_product_path(product.design, product), method: :delete, data: {confirm: "Are you sure?"} %>
+
+              </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="cart-footer">
+        <div class="total-price">
+          <div class="title-sum">
+            <p>Total price :</p>
+          </div>
+          <div class="sum">
+            <p>€ <%= @sum %></p>
+          </div>
+        </div>
+        <div class="payment text-right">
+          <%= link_to "Proceed to payment", order_path(@order), method: :patch, class: "btn btn-danger" %>
         </div>
       </div>
-    </div>
-  </div>
-<% end %>
+
+    <% end %>
+</div>
+

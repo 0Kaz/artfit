@@ -8,8 +8,9 @@
 
 require 'faker'
 
-
+Basket.destroy_all
 Design.destroy_all
+Order.destroy_all
 User.destroy_all
 PHOTO = [
   "https://res.cloudinary.com/kzkjr/image/upload/v1535543330/img15.png",

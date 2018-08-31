@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @designs = Design.all
   end
+
+  def checkout
+    @basket
+  end
 end
