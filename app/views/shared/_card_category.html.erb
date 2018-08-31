@@ -1,7 +1,7 @@
 <div class="section2">
-  <h3>Browse T-shirts by Theme</h3>
+  <h2>Browse T-shirts by Theme</h2>
 
-  <div class="container">
+  <div class="container big-container">
     <div class="row">
       <% @sum = 0 %>
 
@@ -10,7 +10,7 @@
         <% @designsthemes = Design.where("theme ILIKE ?", design.theme) %>
 
         <div class="col-xs-12 col-md-6">
-          <h4><%= design.theme %></h4>
+          <h3><%= design.theme %></h3>
           <div class="super">
             <div class="row" style="margin: 0">
               <div class="carousel slide multi-item-carousel" id="theCarousel<%= @sum %>">

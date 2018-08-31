@@ -41,38 +41,41 @@ multi-item-carousel{
 // non-related styling:
 
 .section2 {
-  margin-top: 50px;
+  background-color: rgba(255,255,255,0.7);
+  margin-top: 40px;
+  margin-bottom: 40px;
   width: 100%;
   height: auto;
-    h3 {
+    h2 {
     font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
-    color: black;
+    color: rgba(0,0,0,0.7);
   }
-    h4 {
+    h3 {
     font-family: 'Gloria Hallelujah', cursive;
-    margin-left: 50px;
-    color: black;
-    margin-top: 60px;
+    color: rgba(0,0,0,0.7);
+    margin-top: 40px;
   }
 }
 
 .super {
   padding: 20px 0 20px 0 !important;
-  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('https://images.unsplash.com/photo-1488409688217-e6053b1e8f42?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=62d489ce4449d4007bb9fbba9e681baf&w=1000&q=80');
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('https://images.unsplash.com/photo-1519636243899-5544aa477f70?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=21531763dc7f062effed3a2569519893&auto=format&fit=crop&w=800&q=60');
   background-size: cover;
   background-position: center;
   width: 100% !important;
-  height: 170px !important;
+  height: 160px !important;
   margin-right: 0px !important;
 }
 
+.big-container {
+  padding: 0px !important;
+}
 
 .img-cat {
   // border: solid black 1px;
   background-color: rgba(255,255,255,0.8);
-  border-radius: 7px;
-
+  border-radius: 5px;
 }
 
 
