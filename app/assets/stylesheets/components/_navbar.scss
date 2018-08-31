@@ -9,6 +9,7 @@
   justify-content: space-between;
   background-color: #363636;
   transition: 0.5s background-color ease;
+
 }
 
 .navbar-wagon-white {
@@ -30,12 +31,12 @@
 /* Logo */
 .navbar-wagon-brand {
   height: 50px;
+  // font-family: 'Anton', sans-serif;
   font-family: 'Gloria Hallelujah', cursive;
   color: white;
   font-size: 25px;
   p {
     color: white;
-    padding-top: 5px;
   }
 }
 

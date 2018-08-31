@@ -6,7 +6,8 @@
 
       <% if @designs == [] %>
         <div class="search_results">
-          <h1>Sorry ..we couldn't find the "<%= params[:query] %>" theme among our search.<i class="fas fa-sad-tear"></i></h1>
+          <h1>Damn ! we couldn't find the "<%= params[:query] %>" shirt in our wardrobe.</h1>
+          <div class ="fface"><%= cl_image_tag "https://res.cloudinary.com/kzkjr/image/upload/v1535725233/Sad-Face-PNG-Pic-279x279.png" %></div>
         </div>
 
       <% else %>
