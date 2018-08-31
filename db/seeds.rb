@@ -30,7 +30,8 @@ PHOTO = [
 
 PHOTO.each do |photo|
   user = User.create(email: Faker::Internet.email)
-  design = Design.new(name: Faker::Artist.name, theme: Faker::Music.genre, user: user)
+  theme = @themes.sample
+  design = Design.new(name: Faker::Artist.name, theme: theme, user: user)
   design.remote_photo_url = photo
   design.save
 end
