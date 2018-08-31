@@ -2,7 +2,12 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @designs = Design.all
+ @array = []
+ @designs = Design.all
+ @designs.each do |design|
+ @array << design.theme.to_s
+ @array = @array.uniq
+ end
   end
 
   def checkout
