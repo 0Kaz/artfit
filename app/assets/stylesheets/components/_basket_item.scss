@@ -1,0 +1,12 @@
+.row > div
+{
+    display: inline-block;
+    border: solid 1px #000;
+}
+.row
+{
+    border: solid 1px #ff0000;
+    text-align: center;
+    margin: 0px auto;
+    width: 40%;
+}

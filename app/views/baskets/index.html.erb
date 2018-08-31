@@ -1,23 +1,35 @@
-<div class="container">
-  <h1>Your Basket</h1>
-  <% @products.each do |product| %>
-  <div class="row" margin-left: -15px; margin-right: -15px; outline: 10px solid red;>
-      <div class="col col-xs-12 col-sm-6 col-lg-8" border: 1px solid red;>
-      <h2 align="margin-left"> <%= product.design.name %> </h2>
-      <img class= "basketpics" <%= cl_image_tag product.design.photo,:width => 0.4, :crop=>"scale" %> >
-      </div>
-      <div class="col col-xs-12 col-sm-6 col-lg-8">
-        <ul>
-          <p><strong> Size: </strong></p>
-            <li> <%= product.size %>  </li>
-          <p><strong> Quantity: </strong></p>
-             <li> <%= product.quantity %> </li>
-          <p><strong> Price: </strong></p>
-             <li><%= product.unit_price %> </li>
-         </ul>
-        </div>
-      </div>
-      <% end %>
-    </div>
-</div>
+<html>
+<body>
 
+
+   <div>
+    <h1>My Cart </h1>
+    <a align="right" href="/designs" class="continue">Continue Shopping</a>
+  </div>
+
+
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="d1">
+      <h2> <%= product.design.name %> </h2>
+      <img class= "basketpics" <%= cl_image_tag product.design.photo,:width => 0.4, :crop=>"scale" %> >
+    </div>
+
+    <div class="d2">
+      <p> <em>Product Description </em></p>
+
+      <dl>
+        <dt>Size:</dt><dd> <%= product.size %> </dd>
+        <dt>Quantity:</dt><dd> <%= product.quantity %> </dd>
+        <dt>Price:</dt><dd> <%= product.unit_price %> </dd>
+        </dl>
+    </div>
+    <% end %>
+  <div/>
+
+
+
+
+</body>
+<a href="/designs" class="continue">Confirm</a>
+</html>
