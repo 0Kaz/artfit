@@ -50,7 +50,11 @@ form.dropzone {
   border-radius: 15px;
 }
 
-.droparea {
-
+#droparea {
+  border: 2px dashed lightgrey;
+  background: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  width: 70%;
+  margin-top: 25px;
 }
 
