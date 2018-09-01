@@ -23,6 +23,7 @@ function initDropZone() {
     myDropzone.on("success", function(file, serverResponse) {
         /* Maybe display some more file information on your page */
         //console.log(serverResponse);
+        //this is to redirect to the design show page
         window.location = serverResponse.redirect;
     });
 
